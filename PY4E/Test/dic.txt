@@ -1,0 +1,7 @@
+Name: Steve , Ian , Bruce , Ozzy
+Surname: Tyler , Gillan , Dickinson, Osbourne
+Age: 74 , 77 , 64 , 74
+Height: 5.9 , 6.2 , 5.6 , 5.10
+Hair: brown , blond , brown , black
+Band: Aerosmith , DeepPurple , IronMaiden , BlackSabbath
+

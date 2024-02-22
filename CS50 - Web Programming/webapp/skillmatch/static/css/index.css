@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css?family=Space Grotesk&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,500,600,700&display=swap');
+
+.content {
+    margin: auto;
+    width: 90%;
+}
+
+:root {
+    --project-height: 250px;
+}
+
+body {
+    background-color: white;
+    padding-bottom: 90px;
+}
+
+.projects {
+    /* width: 90%; */
+    margin: auto;
+    border-radius: 5px;
+    padding: 50px;
+    background-color: black;
+    border-radius: 20px;
+}
+
+.project {
+    padding: 20px;
+    padding-bottom: 0px;
+    padding-top: 20px;
+    margin-bottom: 10px;
+    width: fit-content;
+    height: var(--project-height);
+    margin-bottom: 50px;
+}
+
+.project .summary {
+    width: 90%;
+    margin: 10px 20px 0;
+    height: calc(var(--project-height) - 100px);
+    float: left;
+    line-height: 2.4;
+    overflow: hidden;
+}
+
+.project .generalInfo {
+    float: left;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.project li {
+    font-family: Ne10-simplified,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #053041;
+    margin-bottom: 5px;
+}
+
+.project p {
+    margin-bottom: 20px;
+}
+
+.project h3 {
+    padding: 5px;
+    margin: 10px 15px 5px;
+    width: fit-content;
+    font-size: 20px;
+    font-family: Rubik;
+    text-transform: uppercase;
+    color: #22768D;
+    text-shadow: 0 0 1px #154654;
+}
+
+.project h4 {
+    margin-bottom: 7.5px;
+    margin-top: 20px;
+    font-family: "Rubik";
+    font-size: 16px;
+    color: #125567;
+}
+
+.project img {
+    width: var(--project-height);
+    float: left;
+    border-radius: 20px;
+    transition: all 0.3s ease-out;
+}
+
+.project .content {
+    --content-padding: 20px;
+    font-size: 15px;
+    margin-left: 40px;
+    float: left;
+    overflow: hidden;
+    width: 74%;
+    border-radius: 20px;
+    padding: var(--content-padding);
+    height: calc(var(--project-height) - (var(--content-padding) * 2));
+    background-color: white;
+    box-shadow: 0 10px 0px rgb(164, 164, 164), 0 16.5px 1em #6F6F6F;
+    transition: all 0.2s ease-out;
+    cursor:pointer;
+    padding-bottom: 25px;
+}
+
+.project .content:hover {
+    transform: translate3d(0, -10px, 10px);
+    box-shadow: 0 10px 0px rgb(164, 164, 164), 0 21px 1em #6F6F6F;
+}
+  
+.img-container {
+    float: left;
+    width: var(--project-height);
+    height: var(--project-height);
+    overflow: hidden;
+    border-radius: 20px;
+    transition: all 0.3s ease-out;
+}
+
+.img-container:hover img {
+    /*transform: translate3d(0, -10px, 10px);*/
+    transform: scale(1.2)
+}
+
+.title {
+    font-family: "Space Grotesk";
+    color: #275E82;
+    margin-top: 70px;
+}
+
+.done-test {
+    margin: auto;
+    width: fit-content;
+    padding: 20px;
+    background-color: #3C6E9F;
+    border-radius: 20px;
+    margin-bottom: 40px;
+}
+
+.done-test h3 {
+    color: white;
+}
+
+.done-test a {
+    color: #001A48;
+}
+
+.main-container {
+    float: left;
+    width: 70%;
+}
+
+@media screen and (min-width: 1250px) and (max-width: 1455px) {
+    .projects {
+        padding: 30px;
+        width: 93%;
+    }
+    
+    .project .generalInfo {
+        display: block;
+        margin-top: 0;
+    }
+
+    .project .content {
+        width: 75%;
+        --content-padding: 15px;
+    }
+
+    .project .summary {
+        width: 95%;
+        margin: 0px 20px 0;
+        height: calc(var(--project-height) - 60px)
+    }
+
+    .project h3 {
+        margin-bottom: 0;
+    }
+
+    .main-container {
+        width: 70%;
+    }
+
+    :root {
+        --project-height: 210px;
+    }
+}
+
+
+@media screen and (min-width: 1000px) and (max-width: 1250px) {
+    .projects {
+        padding: 30px;
+        width: 92%;
+    }
+    
+    .project .generalInfo {
+        margin-top: 0;
+        margin-left: auto;
+    }
+
+    .project .content {
+        width: 75%;
+        --content-padding: 15px;
+    }
+
+    .project .summary {
+        width: 95%;
+        margin: 0px 10px 0;
+        line-height: 2;
+        height: calc(var(--project-height) - 60px)
+    }
+
+    .project h3 {
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+
+    #abilities {
+        display: none;
+    }
+
+    .main-container {
+        width: 70%;
+    }
+
+    .main-container h3 {
+        font-size: 15px;
+    }
+
+    :root {
+        --project-height: 150px;
+    }
+}
+
+@media screen and (min-width: 390px) and (max-width: 1000px) {
+    .title {
+        margin-top: 35px;
+        font-size: 30px;
+    }
+
+    .projects {
+        width: auto;
+        padding: 10px;
+    }
+
+    .project {
+        padding: 10px;
+        width: auto;
+        margin-bottom: 30px;
+    }
+
+    :root {
+        --project-height: 145px;
+    }
+
+    .project .content {
+        --content-padding: 10px;
+        padding-bottom: 10px;
+        margin-left: 15px;
+        width: calc(90% - var(--project-height));
+    }
+
+    .project h3 {
+        padding: 0;
+        font-size: 12.5px;
+        margin: 5px;
+    }
+
+    .main-container {
+        width: auto;
+    }
+
+    .project .summary {
+        margin: 10px;
+        margin-top: 5px;
+        line-height: 2.1;
+        font-size: 12px;
+        width: auto;
+        height: calc(var(--project-height) - 70px)
+    }
+
+    .generalInfo {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .project {
+        height: auto;
+    }
+
+    .img-container {
+        float: none;
+    }
+
+    .project .content {
+        float: none;
+        margin: auto;
+        margin-top: 10px;
+        width: auto;
+    }
+
+    .main-container {
+        width: 100%;
+    }
+
+    .project .summary {
+        margin-top: 0;
+        line-height: 2;
+    }
+
+    .project h3 {
+        margin-top: 0;
+    }
+}

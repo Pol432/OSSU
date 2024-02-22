@@ -1,0 +1,29 @@
+{% extends "skillmatch/layout.html" %}
+{% load static %}
+
+{% block script %}
+    <script type="text/babel" src="{% static 'js/index.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+{% endblock %}
+
+{% block body %}
+    {% if not user.done_test %}
+        <h1 class="title" > PROJECTS </h1>
+        <div class="done-test">
+            <h3> If you want personalized recommendations, you can have a test <a href="{% url 'test' %}"> here</a> </h3>
+        </div>
+    {% else %}
+        <h1 class="title" > RECOMMENDED PROJECTS </h1>
+    {% endif %}
+    
+    <div id="content">
+    </div>
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+{% endblock %}

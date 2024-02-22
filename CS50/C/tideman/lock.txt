@@ -1,0 +1,27 @@
+    // Creating a variable that will count how many "trues" there are before adding another one
+    int count;
+    for (int k = 0; k < pair_count; k++)
+    {
+        count = 0;
+        // Looping for each possible edges so we can see if adding another one would create a cycle
+        for (int i = 0; i < candidate_count; i++)
+        {
+            for (int j = 0; j < candidate_count; j++)
+            {
+                // If the edge is comparing the same value with itself or the current pair then skip
+                if ((i == j) || ((pairs[k].winner == i) && (pairs[k].loser == j)))
+                {
+                    continue;
+                }
+                if (locked[i][j] == true)
+                {
+                    count++;
+                }
+            }
+        }
+        // Adding an edge only if it wouldn't create a cycle
+        if (count != candidate_count - 1)
+        {
+            locked[pairs[k].winner][pairs[k].loser] = true;
+        }
+    }

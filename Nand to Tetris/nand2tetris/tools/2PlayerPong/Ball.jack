@@ -1,0 +1,82 @@
+class Ball {
+    field int x, y, size;
+    field int dirX, dirY;
+
+    constructor Ball new() {
+        let x = 255;
+        let y = 127;
+        let size = 9;
+        let dirX = Random.randRange(2);
+        if (dirX = 1) {
+            let dirX = -1;
+        } else {
+            let dirX = 1;
+        }
+        let dirY = Random.randRange(2);
+        if (dirY = 1) {
+            let dirY = -1;
+        } else {
+            let dirY = 1;
+        }
+        return this;
+    }
+
+    method int getX() {return (x + size);}
+    method int getY() {return y;}
+    method void setDirY(int newDir) {let dirY = newDir; return;}
+    method void setDirX(int newDir) {let dirX = newDir; return;}
+
+    method void move() {                    // Change in x or y if there is a collision.
+        do Screen.setColor(false);
+        do Screen.drawRectangle(x, y, (x + size), (y + size));
+
+        /** If reaches end of screen, it stops moving */
+        if (x > 510) {
+            let dirX = 0;
+        }
+        if (x < 2) {
+            let dirX = 0;
+        }
+
+        let x = x + dirX;
+        let y = y + dirY;
+
+        do Screen.setColor(true);
+        do Screen.drawRectangle(x, y, (x + size), (y + size));
+        return;
+    }
+
+    method void pong() {
+        let dirX = dirX * -1;
+        let dirY = dirY * -1;
+        return;
+    }
+
+    method void restart() {
+        do Screen.setColor(false);
+        do Screen.drawRectangle(x, y, (x + size), (y + size));
+
+        let x = 255;
+        let y = 127;
+        let dirX = Random.randRange(2);
+        if (dirX = 1) {
+            let dirX = -1;
+        } else {
+            let dirX = 1;
+        }
+        let dirY = Random.randRange(2);
+        if (dirY = 1) {
+            let dirY = -1;
+        } else {
+            let dirY = 1;
+        }
+        do Sys.wait(1000);
+        return;
+    }
+
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+
+}

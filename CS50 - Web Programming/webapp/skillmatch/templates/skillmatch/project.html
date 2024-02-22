@@ -1,0 +1,49 @@
+{% extends "skillmatch/layout.html" %}
+{% load markdownify %}
+{% load static %}
+
+{% block script %}
+    <script type="text/babel" src="{% static 'js/project.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/project.css' %}">
+    <script src="https://kit.fontawesome.com/3929e16ef5.js" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block body %}
+    <div id="project" class="project" data-projectID="{{ project.id }}" data-aos="fade-up" data-aos-once="true" data-aos-duration="700">
+        <div class="general">
+            <div class="img-container">
+                <img src="{{ project.image.url }}" />
+            </div>
+            <div id="actions"></div>
+        </div>
+
+        <div class="introduction">
+            <h3> {{ project.name }} </h3>
+        
+            <div class="general-info"> 
+                <h4> Abilities you will gain </h4>
+                <ul>
+                    {% for ability in project.abilities.all %}
+                        <li> {{ ability.ability | title }} </li>
+                    {% endfor %}
+                </ul>
+        
+                <h4> Related careers </h4>
+                <ul>
+                    {% for career in project.careers.all %}
+                        <li> {{ career.career | title }} </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        
+        <h4> INTRODUCTION </h4>
+        <p> {{ project.introduction | markdownify | linebreaks }} </p>
+
+        <h4> INSTRUCTION </h4>
+        <p> {{ project.instructions | markdownify | linebreaks }} </p>
+
+        <h4> Courses you can take </h4>
+        <p> {{ project.courses | markdownify }} </p>
+    </div>
+{% endblock %}

@@ -1,0 +1,112 @@
+class Game {
+    field Player p1, p2;
+    field Ball ball;
+    field int s1, s2; // Two scores
+
+    constructor Game new() {
+        let p1 = Player.new(10);
+        let p2 = Player.new(491);
+        let ball = Ball.new();
+        let s1 = 0;
+        let s2 = 0;
+        return this;
+    }
+
+    method void play() {
+        var char key;
+        var boolean endGame;
+        var int ballX, ballY;
+        let endGame = false;
+
+        while (~endGame) {      // Game ends when one player reaches 10 score points
+            do Sys.wait(5);
+            let key = Keyboard.keyPressed();
+
+            if (key = 87) {
+                do p1.setDir(1);
+            }
+            if (key = 83) {
+                do p1.setDir(2);
+            }
+            if (key = 131) {
+                do p2.setDir(1);
+            }
+            if (key = 133) {
+                do p2.setDir(2);
+            }
+
+            do p1.move();
+            do p2.move();
+
+            /** Checking collission with walls*/
+            if (ballY < 2) {
+                do ball.setDirY(1); 
+            }
+            if (ballY > 243) {
+                do ball.setDirY(-1);
+            }
+
+            let ballX = ball.getX();
+            let ballY = ball.getY();
+            /** Checking collision with players */
+            if (ballX > 491) {
+                if (ballX < 500) {
+                    if (ballY < (p2.getHeight() + 4)) {
+                        if ((ballY + 4) > p2.getY()) {
+                            do ball.pong();
+                        }
+                    }
+                }
+            }
+            if (ballX < 30) {
+                if (ballX > 10) {
+                    if (ballY < (p1.getHeight() + 4)) {
+                        if ((ballY + 4) > p1.getY()) {
+                            do ball.pong();
+                        }
+                    }
+                }
+            }
+            do ball.move();
+
+            if (ballX > 501) {
+                let s1 = s1 + 1;
+                do ball.restart();
+            }
+            if (ballX < 12) {
+                let s2 = s2 + 1;
+                do ball.restart();
+            }
+
+
+            if (s1 = 10) {
+                let endGame = true;
+            }
+            if (s2 = 10) {
+                let endGame = true;
+            }
+        }
+        do Screen.clearScreen();
+        do Output.moveCursor(21, 19);
+        if (s1 > s2) {
+            do Output.printString("Player 1 wins!");
+        }
+        if (s2 > s1) {
+            do Output.printString("Player 2 wins!");
+        }
+        do Output.println();
+        do Output.printInt(s1);
+
+        do Output.println();
+        do Output.printInt(s2);
+        return;
+    }
+
+    method void dispose() {
+        do p1.dispose();
+        do p2.dispose();
+        do ball.dispose();
+        do Memory.deAlloc(this);
+        return;
+    }
+}

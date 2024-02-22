@@ -1,0 +1,16 @@
+function Test.test 0
+push argument 0
+pop pointer 0
+push this 0
+push this 1
+add
+push constant 4
+sub
+if-goto IF_TRUE_20
+goto IF_FALSE_20
+label IF_TRUE_20
+push constant 1
+return
+goto IF_CONTINUE_20
+label IF_FALSE_20
+label IF_CONTINUE_20

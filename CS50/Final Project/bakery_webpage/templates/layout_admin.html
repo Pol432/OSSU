@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="static\styles_admin.css" >
+
+        <script type="text/javascript" href="/static/script.js"></script>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <title>Bakery Webpage</title>
+
+    </head>
+    <body>
+        <!-- NavBar -->
+        <header>
+            <nav class="navbar">
+                <a href="/home" class="nav-brand">Sweetbom</a>
+
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="/edit" class="nav-link">Homepage</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/breads_edit" class="nav-link">Breads</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/cakes_edit" class="nav-link">Cakes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/desserts_edit" class="nav-link">Desserts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/logout" class="nav-link">Log Out</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </header>
+
+        <!--Main Content -->
+        <main id="home">
+            {% block main %}{% endblock %}
+        </main>
+
+    </body>
+    <script type="text/javascript">
+        function compare_input(){
+            var password=document.getElementById('password').value;
+            var confirmation=document.getElementById('confirmation').value;
+            if(password !== confirmation){
+               alert('Passwords are not the same');
+            }
+          }
+
+        const image_input = document.querySelector("#file");
+        var uploaded_image = "";
+
+        image_input.addEventListener("change", function() {
+            const reader = new FileReader();
+            reader.addEventListener("load", () => {
+                uploaded_image = reader.result;
+                document.querySelector("#display_image").style.backgroundImage = `url(${uploaded_image})`;
+            });
+            reader.readAsDataURL(this.files[0]);
+        })
+    </script>
+</html>

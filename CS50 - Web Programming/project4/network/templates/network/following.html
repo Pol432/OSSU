@@ -1,0 +1,19 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+    <div class="posts">
+        {% for post in posts %}
+            <div class="post_container">
+                <a href="{% url "profile" post.author.id %}"> <h4> {{ post.author }} </h4> </a>
+                {% if post.author == user %}
+                    edit
+                {% endif %}
+                <p> {{ post.content }} </p>
+                <p> {{ post.date }} </p>
+                <p>&hearts; {{ post.likes }} <p> 
+            </div>
+        {% empty %}
+            <h5> No one has posted yet </h5>
+        {% endfor %}
+    </div>
+{% endblock %}

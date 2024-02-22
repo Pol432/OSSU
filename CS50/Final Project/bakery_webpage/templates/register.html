@@ -1,0 +1,27 @@
+{% extends "layout_admin.html" %}
+
+{% block main %}
+
+    <div class="container_form">
+
+        <div class="title register_ttl">
+            <h1>Register</h1>
+        </div>
+
+        <form action="/register" method="post">
+        <div class="form_input">
+            <input autocomplete="off" autofocus id="username" name="username" placeholder="Username" type="text" required required minlenght="4">
+        </div>
+        <div class="form_input">
+            <input id="password" name="password" placeholder="Password" type="password" required required minlenght="7">
+        </div>
+        <div class="form_input">
+            <input id="confirmation" name="confirmation" placeholder="Confirm Password" type="password" required minlenght="7">
+        </div>
+        <div class="form_input">
+            <input id="brand_key" onkeyup="compare_input();" name="brand_key" placeholder="Bakery Password" type="password" required>
+        </div>
+        <button class="btn btn_register" onclick="compare_input();" type="submit">Submit</button>
+    </div>
+
+{% endblock %}

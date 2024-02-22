@@ -1,0 +1,360 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #ffcc66;
+}
+
+li  {
+    list-style: none;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.nav-menu li {
+    font-family: "Ebrima";
+    font-size: 20px;
+}
+
+.nav-brand {
+    font-size: 2rem;
+    font-family: "Brush Script MT";
+    font-size: 40px;
+    transition: 0.5s;
+}
+.nav-brand:hover {
+    text-shadow: 5px 5px #ff9933;
+}
+
+.nav-link {
+    transition: 0.7s ease;
+}
+
+.nav-link:hover {
+    color: #262626;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    --webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    color: white;
+}
+
+@media only screen and (max-width: 768px){
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #ffff;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .nav-item {
+        margin: 16px, 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+}
+
+/* Register */
+.container_form {
+    padding: 20px;
+    margin: auto;
+    margin-top: 60px;
+    max-width: 70%;
+    border: 2px solid;
+    border-radius: 25px;
+    background-color: #f2f2f2;
+}
+.title {
+    text-align: center;
+    font-family: "Courier";
+    font-size: 25px;
+}
+.register_ttl {
+    margin-bottom: 30px;
+}
+.form_input input[type=text], input[type=password]{
+    width: 100%;
+    padding: 15px;
+    margin: auto;
+    margin-bottom: 15px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-style: italic;
+}
+.btn {
+    width: 100%;
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 10px;
+    font-family: "Courier";
+    font-size: 20px;
+    font-weight: bold;
+}
+.btn_register {
+    margin-top: 20px;
+    background-color: #FFAD00;
+    border-color: #D28F00;
+}
+
+.container_title {
+    background-color: white;
+    padding: 10px;
+    max-width: 90%;
+    margin: auto;
+    margin-top: 60px;
+    border-radius: 10px;
+}
+.container_title h1 {
+    font-size: 35px;
+}
+
+.edit_body {
+    max-width: 90%;
+    background-color: #FFEBC2;
+    padding: 30px;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+
+/* Homepage */
+/* Slides */
+.slides_form {
+    padding: 30px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.slides_current {
+    max-width: 909px;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 30px;
+}
+.slides_current img {
+    width: 300px;
+    height: 175px;
+    display: inline;
+}
+#preview1, #preview2, #preview3 {
+    height: 175px;
+    width: 300px;
+    background-position: center;
+    background-size: cover;
+    border: solid;
+    display: inline-block;
+    margin-left: 40px;
+}
+.slides_form {
+    margin: auto;
+}
+.slides_form .image_upload {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #EDEDED;
+    font-family: "Arial";
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.6);
+    max-width: 30%;
+    margin-right: 20px;
+}
+.previews {
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+/* Products */
+.products_display {
+    padding: 75px;
+    display: block;
+}
+.product {
+    border-radius: 25px;
+    border: 2px solid #D9C7A1;
+    background-color: #FFEBC2;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    margin-bottom: 40px;
+    background-color: white;
+    width: 100%;
+}
+
+.product_description {
+    padding: 30px;
+    max-height: 100%;
+    max-width: 688px;
+}
+.product_description h2 {
+    font-family: Comic Sans MS;
+    font-size: 20px;
+    margin-bottom: 12.5px;
+}
+.product_description h3, h5 {
+    font-family: Bahnschrift SemiBold;
+    font-size: 17.5px;
+    display: inline;
+}
+.product_description p {
+    font-family: Candara;
+}
+.product img {
+    max-width: 200px;
+}
+
+.btn_delete {
+    width: 100px;
+    border-left: solid;
+    float:right;
+    margin-left: auto;
+}
+.btn_delete form  {
+    width: 100%;
+    height: 100%;
+
+}
+
+.btn_delete input[type="submit"] {
+    width: 100%;
+    height: 100%;
+    background:transparent;
+    font-size: 0;
+    border:none;
+    outline:none;
+    display:block;
+    cursor:pointer;
+    background-image: url("/static/delete_btn.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+/* Add products form */
+.container_products {
+    max-width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    border: 3px solid;
+    border-radius: 25px;
+    background-color: white;
+    padding: 20px;
+}
+.container_products h1 {
+    margin-bottom: 25px;
+}
+
+.product_form {
+    font-family: "Comic Sans MS";
+    font-size: 20px;
+    padding-bottom: 25px;
+    margin-left: 10px;
+    margin-bottom: 25px;
+    color: #BF883B;
+}
+
+.products_add input[type="text"], label {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+#display_image {
+    border: solid;
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    margin: auto;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #EDEDED;
+  }
+.btn_add {
+    background-color: #FFAD00;
+    border-color: #D28F00;
+}
+.image_upload {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+    padding: 12px;
+    padding-left: 15px;
+    cursor: pointer;
+    background-color: #EDEDED;
+    font-family: "Arial";
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+
+
+
+body {
+    background-image: url("/static/bakery3-blur.jpg");
+    background-size: cover;
+}

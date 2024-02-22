@@ -1,0 +1,57 @@
+{% extends "skillmatch/layout.html" %}
+{% load markdownify %}
+{% load static %}
+
+{% block script %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/babel" src="{% static 'js/user.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+{% endblock %}
+
+{% block body %}
+    <div id="content" class="content">
+        <div class="stats">
+            {% if user.done_test %}
+                <h2> Your Preferences (According to the Test) </h2>
+                <canvas id="myChart"></canvas>
+            {% else %}
+                <h3 class="test"> If you want to see your preferences, you can have a test <a href="{% url 'test' %}"> here</a> </h3>
+            {% endif %}
+        </div>
+        <div class="projects-container">
+            <h2> Saved Projects </h2>
+            <div id="saved-projects" data-aos="fade-up" data-aos-once="true" data-aos-duration="750"></div>
+        </div>
+    </div>
+
+    {% if user.user_type == "teacher" %}
+    <div class="created-projects" data-aos="fade-up" data-aos-once="true" data-aos-duration="750">
+        <h3> CREATED PROJECTS </h3>
+        <a href="{% url 'create_project' %}"> <button class="create-project" type="button"> CREATE NEW PROJECT </button> </a>
+        <div class="created-list" id="created-projects"></div>
+    </div>
+    {% endif %}
+
+    {% if user.is_staff %}
+    <div class="created-projects" data-aos="fade-up" data-aos-once="true" data-aos-duration="750">
+        <h3> PENDING PROJECTS </h3>
+        <div class="created-list" id="pending-projects">
+            <div class="projects">
+                {% for project in pending_projects %}
+                    <a href="{% url 'edit_project' project.id %}">
+                        <div class="project" >
+                            <h3> {{ project.name}} </h3>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+{% endblock %}

@@ -1,0 +1,17 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/02/FullAdder.hdl
+
+/**
+ * Negate a 16-bit number
+ */
+
+ CHIP Neg16 {
+    IN in[16];  // 16-bit input
+    OUT out[16];     // Negated number
+
+    PARTS:
+    Add16(a=in, b=true, out=sum);
+    Not16(in=sum, out=out);
+}

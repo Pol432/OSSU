@@ -1,0 +1,36 @@
+<div class="container">
+            <div class="selection">
+                <button type="button" onclick="">Breads</button>
+                <button type="button" onclick="">Cakes</button>
+                <button type="button" onclick="">Deserts</button>
+            </div>
+            <div class="products_display">
+                <div class="breads_products">
+                    <div class="product">
+                        <img src="/static/breads1.jpg" alt="">
+                        <h2>Guagüas' Bread</h2>
+                        <p>
+                            Long bread filled with chocolate, cheese, or marmalade.
+                        </p>
+                    </div>
+                </div>
+                <div class="cakes_products">
+                    <div class="product">
+                        <img src="/static/cakes3.jpg" alt="">
+                        <h2>Vanilla Cake</h2>
+                        <p>
+                            Vanilla cake covered with chocolate chips and with chocolate waffers, cream and cherries on top.
+                        </p>
+                    </div>
+                </div>
+                <div class="desserts_products">
+                    <div class="product">
+                        <img src="/static/desserts3.jpg" alt="">
+                        <h2>Mousse Jar</h2>
+                        <p>
+                            You can choose between: red fruits, passion fruit, strawberry, soursop, taxo, blackberry, naranjilla and coconut..
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>

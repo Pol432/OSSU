@@ -1,0 +1,52 @@
+{% extends "layout_admin.html" %}
+
+{% block main %}
+
+    <div class="container_title">
+        <h1 class="title">Breads</h1>
+    </div>
+
+    <div class="edit_body">
+        <div class="container_products">
+            <h1 class="title">Add new Product</h1>
+
+            <form class="products_add" action="/breads_edit" method="post">
+                <label class="product_form"> Product Image </label>
+                <label class="image_upload">
+                    <input type="file" id="product_image" name="product_image" placeholder="insert_image" accept="image/*" required autocomplete="off">
+                    (Make sure your image is 200x200 pixels long)
+                </label>
+                <div id="display_image"></div>
+
+
+                <label class="product_form">Product Title</label>
+                <input type="text" id="product_title" name="product_title" placeholder="Insert title" required autocomplete="off">
+
+                <label class="product_form">Product Cost</label>
+                <input type="text" id="product_cost" name="product_cost" placeholder="Insert cost" required autocomplete="off">
+
+                <label class="product_form">Product Description</label>
+                <input type="text" id="product_description" name="product_description" placeholder="Insert description" required autocomplete="off">
+
+                <input type="submit" class="btn btn_add" value="ADD">
+            </form>
+        </div>
+
+        <div class="products_display">
+            {% for breads in breads_list %}
+            <div class="product">
+                <img src="/static/{{ breads['image'] }}" alt="">
+                <div class="product_description">
+                    <h2>{{ breads['title'] }}</h2>
+                    <h3>Cost: </h3> <h5>${{ breads['cost'] }}</h6>
+                    <p> {{ breads['description'] }} </p>
+                </div>
+                <div class="btn_delete">
+                    <input type="submit" src="/static/delete_btn.png" alt="Submit" name="{{ breads['id'] }}" id="{{ breads['id'] }}">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

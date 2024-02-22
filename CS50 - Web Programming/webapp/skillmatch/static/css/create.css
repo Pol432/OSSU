@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500,600,700&display=swap');
+body h1 {
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    width: fit-content;
+}
+
+body {
+    padding-bottom: 30px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    font-family: "Ubuntu";
+    font-size: 16px;
+}
+
+input[type="text"], input[type="file"], textarea {
+    margin-bottom: 30px;
+    margin-left: 10px;
+}
+
+input[type="text"] {
+    width: 300px;
+    border-radius: 10px;
+    height: 30px;
+    padding: 5px;
+}
+
+textarea {
+    width: 95%;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+#id_careers, #id_abilities {
+    margin-bottom: 40px;
+    margin-left: 10px;
+}
+
+.create {
+    width: 85%;
+    padding: 70px;
+    margin: auto;
+    background-color: #f6f7f8;
+    border-radius: 20px;
+}
+
+button[type="submit"] {
+    padding: 10px;
+    width: 300px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#id_calculus {
+    margin-bottom: 40px;
+}

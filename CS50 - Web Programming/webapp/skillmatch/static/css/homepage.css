@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500,600,700&display=swap');
+
+.white {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background-color: white;
+}
+
+.left {
+    z-index: 3;
+    left: 0;
+    transition: all 2s;
+}
+
+.right {
+    z-index: 4;
+    right: 0;
+    transition: all 2s;
+}
+
+.content {
+    --padding: 9%;
+    padding: var(--padding);
+    height: 100%;
+    width: calc(98% - (var(--padding) * 2));
+    margin: auto;
+    font-family: "Poppins";
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    background-color: black;
+    border-radius: 20px;
+}
+
+.content h2 {
+    color: white;
+    margin-bottom: 25px;
+}
+
+.content p, .quote {
+    color: white;
+}
+
+.content i {
+    font-size: 20px;
+}
+
+.content img {
+    float: right;
+    width: 500px;
+    -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+    -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+    box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+.container {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+.authenticate-section {
+    clear: both;
+    padding: 40px;
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.auth {
+    float: left;
+    padding: 55px;
+    margin-bottom: 60px;
+    width: 470px;
+    background-color: #131313;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    font-family: "Poppins";
+}
+
+.auth h3 {
+    color: white;
+    margin-bottom: 30px;
+}
+
+.account button {
+    padding: 15px;
+    font-size: 15px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    width: 200px;
+    border-radius: 10px;
+    border: white;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.account button:hover {
+    background-color: #D5D5D5;
+}
+
+.auth i {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #80DAF2;
+}
+
+.auth ul {
+    text-align: left;
+    line-height: 1.5;
+    display: table;
+    margin: auto;
+}
+
+
+.auth li {
+    margin-bottom: 10px;
+}
+
+
+.teacher {
+    margin-left: 80px;
+}
+
+.account {
+    margin-top: 40px;
+}
+
+h2 {
+    font-family: "Neuemontreal",sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+
+.skills {
+    clear: both;
+    padding: 60px;
+    background-color: #f6f7f8;
+    /* height: 400px; */
+    width: 87%;
+    margin: auto;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.skills h2 {
+    text-indent: 20px;
+    margin-bottom: 40px;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.skill {
+    padding: 2% 1%;
+    text-align: center;
+    width: 20%;
+    display: flex;
+    float: left;
+    border: 2px solid white;
+    border-radius: 25px;
+    margin-left: 5px;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill h4 {
+    margin-bottom: 10px;
+    font-size: 17.5px;
+}
+
+.skill p {
+    line-height: 1.4;
+}
+
+.skill i {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.business-info {
+    display: flex;
+    margin: auto;
+    padding: 20px 50px;
+    /* width: 91%; */
+    align-items: flex-start;
+    border: 2px solid black;
+    border-radius: 20px 20px 0px 0px;
+    margin-top: 50px;
+    background-color: #1A202C;
+}
+
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 30px;
+    margin-right: 20px;
+}
+
+.info h4 {
+    text-align: left;
+    color: white;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.info a {
+    content: '';
+    color: #3182ce;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-family: "Ubuntu";
+}
+
+.info p {
+    color: white;
+    line-height: 1.6;
+}
+
+.app-name {
+    width: 30%;
+}
+
+.app-name h4 {
+    font-size: 30px;
+}
+
+.nav {
+    position: absolute;
+    right: 20px;
+    margin: 5px;
+    display: flex;
+    margin-right: 60px;
+}
+
+.auth a {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 785px) {
+    .auth {
+        width: 70%;
+    }
+
+    .skills {
+        width: 70%;
+    }
+
+    .business-info {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .nav {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+    .skill {
+      width: 35%;
+      padding: 50px 30px;
+      margin-right: auto;
+    }
+
+    .authenticate-section {
+        flex-direction: column;
+    }
+
+    .auth {
+        margin: auto;
+        margin-bottom: 40px;
+        width: 50%;
+    }
+
+    .skills {
+        width: 85%;
+        padding: 40px;
+    }
+
+    .info {
+        margin-right: 5px;
+    }
+
+    .business-info {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .skill {
+      width: 100%;
+      padding: 60px 40px;
+      margin-right: auto;
+    }
+
+    .content img {
+        width: 350px;
+    }
+
+    .info {
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    .app-name h4 {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    .authenticate-section {
+        flex-direction: column;
+        padding: 20px;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+    .auth {
+        margin: auto;
+        margin-bottom: 40px;
+    }
+}

@@ -1,0 +1,63 @@
+class Player {
+    field int x, y, direction;
+    field int width, height;
+
+    constructor Player new(int setX) {
+        let x = setX;
+        let y = 100;
+        let width = 10;
+        let height = 30;
+        let direction = 1;
+        return this;
+    }
+
+    method void setDir(int newDir) {let direction = newDir; return;}
+    method int getX() {return x;}
+    method int getY() {return y;}
+    method int getHeight() {return (y + height);}
+
+    method void move() {
+        if (direction = 1) {
+            do moveUp();
+        }
+        if (direction = 2) {
+            do moveDown();
+        }
+        return;
+    }
+
+    method void moveUp() {
+        if (y > 0) {
+            do Screen.setColor(false);
+            do Screen.drawRectangle(x, y, (x + width), (y + height));
+            let y = y - 1;
+            do Screen.setColor(true);
+            do Screen.drawRectangle(x, y, (x + width), (y + height));
+        }
+        else {
+            let direction = 2;
+        }
+        return;
+    }
+
+    method void moveDown() {
+        var int maxLen;
+        let maxLen = 255 - height;
+        if (y < maxLen) {
+            do Screen.setColor(false);
+            do Screen.drawRectangle(x, y, (x + width), (y + height));
+            let y = y + 1;
+            do Screen.setColor(true);
+            do Screen.drawRectangle(x, y, (x + width), (y + height));
+        }
+        else {
+            let direction = 1;
+        }
+        return;
+    }
+
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+}

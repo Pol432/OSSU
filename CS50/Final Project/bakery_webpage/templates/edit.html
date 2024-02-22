@@ -1,0 +1,86 @@
+{% extends "layout_admin.html" %}
+
+{% block main %}
+
+    <div class="container_title">
+        <h1 class="title">HOMEPAGE</h1>
+    </div>
+
+    <div class="edit_body">
+        <div class="slides_form">
+            <h1 class="title">Edit Slides</h1>
+
+            <form method="post" class="slides_edit" action="/edit" enctype=multipart/form-data>
+                <div class="slides_form">
+                    <label class="image_upload">
+                        <input type="file" id="first_slide" name="first_slide" placeholder="insert_image" accept="image/*">
+                        (Make sure your image is 1350x800 pixels long)
+                    </label>
+                    <label class="image_upload">
+                        <input type="file" id="second_slide" name="second_slide" placeholder="insert_image" accept="image/*">
+                        (Make sure your image is 1350x800 pixels long)
+                    </label>
+                    <label class="image_upload">
+                        <input type="file" id="third_slide" name="third_slide" placeholder="insert_image" accept="image/*">
+                        (Make sure your image is 1350x800 pixels long)
+                    </label>
+                </div>
+
+                <div class="previews">
+                    <div id="preview1"></div>
+                    <div id="preview2"></div>
+                    <div id="preview3"></div>
+                </div>
+
+                <input type="submit" class="btn btn_add" value="Submit" style="margin-bottom: 40px">
+            </form>
+            <h1 class="title">Current Slides</h1>
+            <div class="slides_current">
+                <img src="/static/{{ slides[0]['name'] }}" alt="Slide1">
+                <img src="/static/{{ slides[1]['name'] }}" alt="Slide2">
+                <img src="/static/{{ slides[2]['name'] }}" alt="Slide3">
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        const first_slide = document.querySelector("#first_slide");
+        var first_uploaded = "";
+
+        first_slide.addEventListener("change", function() {
+            const reader = new FileReader();
+            reader.addEventListener("load", () => {
+                first_uploaded = reader.result;
+                document.querySelector("#preview1").style.backgroundImage = `url(${first_uploaded})`;
+            });
+            reader.readAsDataURL(this.files[0]);
+        })
+
+        const second_slide = document.querySelector("#second_slide");
+        var second_uploeaded = "";
+
+        second_slide.addEventListener("change", function() {
+            const reader = new FileReader();
+            reader.addEventListener("load", () => {
+                second_uploeaded = reader.result;
+                document.querySelector("#preview2").style.backgroundImage = `url(${second_uploeaded})`;
+            });
+            reader.readAsDataURL(this.files[0]);
+        })
+
+        const third_slide = document.querySelector("#third_slide");
+        var third_uploaded = "";
+
+        third_slide.addEventListener("change", function() {
+            const reader = new FileReader();
+            reader.addEventListener("load", () => {
+                third_uploaded = reader.result;
+                document.querySelector("#preview3").style.backgroundImage = `url(${third_uploaded})`;
+            });
+            reader.readAsDataURL(this.files[0]);
+        })
+
+    </script>
+
+{% endblock %}

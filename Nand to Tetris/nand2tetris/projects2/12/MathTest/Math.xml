@@ -1,0 +1,12 @@
+<class>
+  <keyword> class </keyword>
+  <identifier> Math </identifier>
+  <symbol> { </symbol>
+  <classVarDec>
+    <keyword> static </keyword>
+    <identifier> Array </identifier>
+    <identifier> power </identifier>
+    <integerConstant> 2 </integerConstant>
+  </classVarDec>
+  <symbol> ; </symbol>
+</class>

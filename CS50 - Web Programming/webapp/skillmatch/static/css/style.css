@@ -1,0 +1,84 @@
+* {
+    margin: 0px;
+}
+
+h1, h2, h3, h4, p {
+    font-family: Ne10-simplified,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #053041;
+}
+
+body {
+    overflow: hidden;
+    overflow-y: scroll;
+    height: min-content;
+}
+
+.band_menu {
+    background-color: black;
+    position: relative;
+    min-height: 70px;
+    text-align: center;
+    padding: 10px 10px;
+    margin: auto;
+    border-radius: 0 0 20px 20px;
+    top: -120px;
+    transition: all 2.2s;
+    overflow: hidden;
+}
+
+.app_name {
+    float: left;
+    color: white;
+    font-family: sans-serif;
+    font-size: 40px;
+    margin-left: 25px;
+    transform: translate(2%, 30%);
+}
+
+.username {
+    font-size: 32.5px;
+    color: white;
+    float: right;
+    padding-right: 50px;
+    margin-top: 5px;
+    transform: translate(1%, 10%);
+}
+
+.logout_button {
+    float: right;
+    margin-top: 12px;
+    padding-right: 35px;
+    color: #265E82;
+    font-family: Ne10-simplified,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transform: translate(2%, 30%);
+}
+
+.title {
+    text-align: center;
+    margin: 40px;
+}
+
+@media screen and (max-width: 900px) {
+    .band_menu {
+        min-height: 60px;
+    }
+
+    .logout_button {
+        margin-top: 15px;
+        font-size: 15px;
+        padding-right: 10px;
+    }
+
+    .app_name {
+        font-size: 30px;
+        margin-left: 5px;
+    }
+
+    .username {
+        font-size: 20px;
+        padding-right: 10px;
+        margin-top: 14px;
+    }
+}

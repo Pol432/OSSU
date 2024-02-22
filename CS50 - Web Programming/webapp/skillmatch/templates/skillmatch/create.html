@@ -1,0 +1,15 @@
+{% extends "skillmatch/layout.html" %}
+{% load static %}
+
+{% block script %}
+    <link rel="stylesheet" href="{% static 'css/create.css' %}">
+{% endblock %}
+
+{% block body %}
+    <h1>Create a Project</h1>
+    <form class="create" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create Project</button>
+    </form>
+{% endblock %}

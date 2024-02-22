@@ -1,0 +1,16 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname boss) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+(require 2htdp/image)
+
+(define WIDTH  300)
+(define HEIGHT 500)
+
+(define BOSS
+  (overlay/xy (overlay
+               (ellipse 35 15 "solid" "blue")
+               (ellipse 40 20 "solid" "Dark Blue"))               
+              10.5 -13
+              (overlay
+               (ellipse 15 20 "solid" "Powder Blue")
+               (ellipse 20 25 "solid" "Light Cyan"))))  

@@ -1,0 +1,59 @@
+class Slime {
+    field int location, direction, skin;
+
+    // Constructs a new slime-player
+    constructor Slime new() {
+        let location = 0;
+        let direction = 0;
+        let skin = 0;
+        return this;
+    }
+
+    /** Getter/Setter methods */
+    method void setDirection(int newDir) {let direction = newDir; return;}
+    method int getDirection() {return direction;}
+    method int getLocation() {return location;}
+
+    /** Movement */
+    method void move() {
+        var int destLoc;
+        do Render.clear(location);
+
+        if (direction = 1) {                   // Moving up
+            let destLoc = location / 8;
+            if (destLoc > 0) {
+                let location = location - 8;
+            }
+        }
+
+        if (direction = 2) {                   // Moving down
+            let destLoc = location / 8;
+            if (location < 7) {
+                let location = location + 8;
+            }
+        }
+
+        if (direction = 3) {                   // Moving left
+             let destLoc = location - ((location / 8) * 8);
+             if (destLoc > 0) {
+                 let location = location - 1;
+             }
+        }
+
+        if (direction = 4) {                   // Moving right
+            let destLoc = location - ((location / 8) * 8);
+            if (destLoc > 0) {
+                let location = location + 1;
+            }
+        }
+        do Render.drawSlime(location);
+
+        let skin = skin + 1;
+        return;
+    }
+
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+}

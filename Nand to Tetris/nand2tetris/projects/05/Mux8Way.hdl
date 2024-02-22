@@ -1,0 +1,8 @@
+CHIP Mux8Way {
+    IN  a, b, c, d, e, f, g, h
+        sel[3];
+    OUT out
+
+    PARTS:
+    Mux8Way16(a[0]=a, b[0]=b, c[0]=c, d[0]=d, e[0]=e, f[0]=f, g[0]=g, h[0]=h, sel=sel, out[0]=out);
+}

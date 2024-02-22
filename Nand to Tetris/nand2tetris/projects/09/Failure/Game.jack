@@ -1,0 +1,51 @@
+class Game {
+    field Slime slime;
+
+    constructor Game new() {
+        let slime = Slime.new();
+        return this;
+    }
+
+    method void play() {
+        var char key;
+        var boolean exit;
+
+        let exit = false;
+        while (~exit) {
+            do Sys.wait(30);
+            let key = Keyboard.keyPressed();
+
+            while (key = 0) {
+                let key = Keyboard.keyPressed();
+            }
+
+            if (key = 131) {
+                do slime.setDirection(1);
+                do slime.move();
+            }
+            if (key = 133) {
+                do slime.setDirection(2);
+                do slime.move();
+            }
+            if (key = 130) {
+                do slime.setDirection(3);
+                do slime.move();
+            }
+            if (key = 134) {
+                do slime.setDirection(4);
+                do slime.move();
+            }
+            if (key = 81) {
+                let exit = true;
+            }
+        }
+        return;
+    }
+
+
+    method void dispose() {
+        do slime.dispose();
+        do Memory.deAlloc(this);
+        return;
+    }
+}

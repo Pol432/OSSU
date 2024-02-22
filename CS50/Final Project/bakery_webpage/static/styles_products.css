@@ -1,0 +1,213 @@
+body {
+    background-image: url("/static/bakery3-blur.jpg");
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header {
+    background-color: #ffcc66;
+    max-width: 70%;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.brand_name {
+    font-family: "Brush Script MT";
+    font-style: italic;
+    font-size: 40px;
+    transition: text-shadow 0.4s;
+    color: black;
+    text-decoration: none;
+}
+.brand_name:hover {
+    color: black;
+    text-shadow: 5px 5px #ff9933;
+}
+
+
+.navbar {
+    border: solid;
+    background-color: white;
+    width: 71%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.nav_items {
+    text-align: center;
+    list-style: none;
+}
+#items {
+    margin-right: 70px;
+    margin-left: 70px;
+    display: inline-block;
+    font-size: 25px;
+    transition: 0.3s;
+}
+#items:hover {
+    text-decoration: underline;
+}
+
+
+.container {
+    max-width: calc(70% + 20px);
+    background-color: white;
+    margin: auto;
+}
+
+.products_display {
+    padding: 75px;
+    display: block;
+}
+
+.product {
+    border-radius: 25px;
+    border: 2px solid #D9C7A1;
+    background-color: #FFEBC2;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.product_description {
+    padding: 30px;
+    max-height: 100%;
+}
+.product_description h2 {
+    font-family: Comic Sans MS;
+    font-size: 20px;
+    margin-bottom: 12.5px;
+}
+.product_description h3, h5 {
+    font-family: Bahnschrift SemiBold;
+    font-size: 17.5px;
+    display: inline;
+}
+.product_description p {
+    font-family: Candara;
+}
+
+
+.product img {
+    max-width: 200px;
+}
+
+/* ___________________________________*/
+body {
+    margin: 0;
+    padding-left: 0;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+    text-decoration: none;
+    color: inherit;
+}
+html {
+    scroll-behavior: smooth;
+}
+p {
+    all: none;
+}
+
+/* Responsive IPad! */
+@media only screen and (max-width: 1000px) {
+    .header {
+        max-width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .navbar {
+        width: 80%;
+        margin-bottom: 15px;
+    }
+    #items {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    .container {
+        max-width: 100%;
+        height: 100%;
+    }
+
+    .product img {
+        max-width: 200px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .navbar {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+    #items {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    a {
+        font-size: 20px;
+    }
+
+    .products_display {
+        padding: 20px;
+    }
+    .product_description p {
+        display: none;
+    }
+    .product img {
+        max-width: 150px;
+    }
+}
+
+
+/*
+CREATE TABLE breads (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    image TEXT NOT NULL,
+    title TEXT NOT NULL,
+    cost TEXT NOT NULL,
+    description TEXT NOT NULL
+);
+INSERT INTO breads VALUES (0, "U4bdviH.jpg", "Guagüas' Bread", "1.50", "Long bread filled with chocolate, cheese, or marmalade. You can accompany it with colada morada for $0.75 extra.");
+
+
+CREATE TABLE cakes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    image TEXT NOT NULL,
+    title TEXT NOT NULL,
+    cost TEXT NOT NULL,
+    description TEXT NOT NULL
+);
+INSERT INTO cakes VALUES (0, "Ze7hK42.jpg", "Vanilla Cake", "20.50", "Vanilla cake covered with chocolate chips and with chocolate waffers, cream and cherries on top.");
+INSERT INTO cakes VALUES (1, "29nmCXd.jpg", "Panettone", "12.99", "Delicious sweet dough studded with candied fruits and raisins.");
+INSERT INTO cakes VALUES (2, "otTj8IP.jpg", "Chocolate Cake", "10.50", "Bariloche cream on each layer and decorated with lots of brigadeiros, Hershey's and Kit-Kats!");
+
+
+CREATE TABLE desserts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    image TEXT NOT NULL,
+    title TEXT NOT NULL,
+    cost TEXT NOT NULL,
+    description TEXT NOT NULL
+);
+INSERT INTO desserts VALUES (0, "Q9pch4A.jpg", "Mousse Jar", "8.50", "You can choose between: red fruits, passion fruit, strawberry, soursop, taxo, blackberry, naranjilla and coconut.");
+INSERT INTO desserts VALUES (1, "PT2zbfX.jpg", "NY Cheesecake", "14.99", "Ultra dense and rich, firm yet creamy, and relies on lots of cream cheese for tang and texture, bolstered by heavy cream, eggs, and sugar!");
+
+
+CREATE TABLE products_count (
+    product TEXT NOT NULL,
+    count INTEGER NOT NULL
+);
+INSERT INTO products_count VALUES ("breads", 1);
+INSERT INTO products_count VALUES ("cakes", 3);
+INSERT INTO products_count VALUES ("desserts", 1);

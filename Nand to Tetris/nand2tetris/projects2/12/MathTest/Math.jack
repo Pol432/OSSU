@@ -1,0 +1,158 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/12/Math.jack
+
+/**
+ * A library of commonly used mathematical functions.
+ * Note: Jack compilers implement multiplication and division using OS method calls.
+ */
+ class Math {
+
+    static Array power2;
+  
+    function void init() {
+      var int i, value;
+  
+      let i = 0;
+      let value = 1;
+      let power2 = Array.new(16);
+      while(i < 16) {
+        let power2[i] = value;
+        let i = i + 1;
+        let value = value + value;
+      }
+  
+      return;
+    }
+  
+    function int abs(int x) {
+      if(x < 0) {
+        return -x;
+      }
+      else {
+        return x;
+      }
+    }
+  
+    function int multiply(int x, int y) {
+      var int result;
+  
+      let result = Math.multiplyAbs(x, y);
+      if(x < 0) {
+        let result = -result;
+      }
+      if(y < 0) {
+        let result = -result;
+      }
+  
+      return result;
+    }
+  
+    function int multiplyAbs(int x, int y) {
+      var int i, shiftedX, result;
+  
+      let x = Math.abs(x);
+      let y = Math.abs(y);
+  
+      let i = 0;
+      let shiftedX = x;
+      let result = 0;
+      while(i < 16) {
+        if(Math.bit(y, i) = 1) {
+          let result = result + shiftedX;
+        }
+        let shiftedX = shiftedX + shiftedX;
+        let i = i + 1;
+      }
+  
+      return result;
+    }
+  
+    function int bit(int x, int b) {
+      if((x & power2[b]) > 0) {
+        return 1;
+      }
+      else {
+        return 0;
+      }
+    }   
+  
+    function int divide(int x, int y) {
+      var int result;
+  
+      if(y = 0) {
+        do Sys.error(3);
+      }
+      let result = Math.divideRec(Math.abs(x), Math.abs(y));
+      if(x < 0) {
+        let result = -result;
+      }
+      if(y < 0) {
+        let result = -result;
+      }
+  
+      return result;
+    }
+  
+    function int divideRec(int x, int y) {
+      var int q;
+  
+      if(y < 0) {
+        return 0;
+      }
+      if(y > x) {
+        return 0;
+      }
+      let q = Math.divideRec(x, y + y);
+      if((x - ((q + q) * y)) < y) {
+        return q + q;
+      }
+      else {
+        return q + q + 1;
+      }
+    } 
+  
+    function int min(int x, int y) {
+      if(x < y) {
+        return x;
+      }
+      else {
+        return y;
+      }
+    }
+  
+    function int max(int x, int y) {
+      if(x > y) {
+        return x;
+      }
+      else {
+        return y;
+      }
+    }
+  
+    function int sqrt(int x) {
+      var int left, right, mid, midSq, result;
+  
+      if(x < 0) {
+        do Sys.error(4);
+      }
+  
+      let left = 0;
+      let right = Math.min(x, 181);
+      let result = 0;
+      while(left < (right + 1)) {
+        let mid = (left + right) / 2;
+        let midSq = mid * mid;
+        if(midSq > x) {
+          let right = mid - 1;
+        }
+        else {
+          let left = mid + 1;
+          let result = mid;
+        }
+      }
+  
+      return result;
+    }
+  }

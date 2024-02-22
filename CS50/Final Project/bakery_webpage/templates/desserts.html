@@ -1,0 +1,20 @@
+{% extends "layout_products.html" %}
+
+{% block main %}
+
+    <body>
+        <div class="products_display">
+            {% for desserts in desserts_list %}
+            <div class="product">
+                <img src="/static/{{ desserts['image'] }}" alt="">
+                <div class="product_description">
+                    <h2>{{ desserts['title'] }}</h2>
+                    <h3>Cost: </h3> <h5>${{ desserts['cost'] }}</h6>
+                    <p> {{ desserts['description'] }} </p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </body>
+
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends "skillmatch/layout.html" %}
+{% load static %}
+
+{% block script %}
+    <script type="text/babel" src="{% static 'js/homepage.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+    <script src="https://kit.fontawesome.com/61dae2f51f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+{% endblock %}
+
+
+{% block body %}
+    <div class="container">
+        <div id="left-band" class="white left"></div>
+        <div class="content">
+            <h2> SkillMatch Beta </h2>
+            <p> <strong> A tool that will help you build your future </strong> </p>
+            <i class="quote"> "We believe in the power of learning through experimentation" </i>
+        </div>
+        <div id="right-band" class="white right"></div>
+    </div>
+    <h2 data-aos="fade-up" data-aos-once="true" data-aos-duration="750"> Start Here </h2>
+    <div data-aos="fade-up" data-aos-once="true" data-aos-duration="750" class="authenticate-section">
+        <div class="auth student">
+            <i class="fa-solid fa-user-graduate"></i>
+            <strong> <h3> STUDENT </h3> </strong>
+            <ul>
+                <li> Take a test to measure your abilities </li>
+                <li> Have personalized project recommendations </li>
+                <li> Save and like projects </li>
+            </ul>
+            <div class="account">
+                <a href="{% url 'authentication' form='register' %}"> <button> Create Account </button> </a>
+                <a href="{% url 'authentication' form='login' %}"> <button> Log In</button> </a>
+            </div>
+        </div>
+        <div class="auth teacher">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            <strong> <h3> TEACHER </h3> </strong>
+            <ul>
+                <li> Have personalized project recommendations </li>
+                <li> Save and like projects </li>
+                <li> Create your own projects </li>
+            </ul>
+            <div class="account">
+                <a href="{% url 'authentication' form='register' %}"> <button> Create Account </button> </a>
+                <a href="{% url 'authentication' form='login' %}"> <button> Log In</button> </a>
+            </div>
+        </div>
+    </div>
+    <div id="skills" class="skills">
+        <h2 data-aos="fade-up" data-aos-once="true" data-aos-duration="750"> We Motivate You To... </h2>
+        <div class="skills-list">
+            {% for skill in skills %}
+            <div data-aos="fade-up" data-aos-once="true" data-aos-duration="750" class="skill">
+                <h4> {{ skill.name }} </h4>
+                {{ skill.icon | safe }}
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="business-info">
+        <div class="info app-name">
+            <h4> SKILLMATCH </h4>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
+        </div>
+        <div class="nav">
+            <div class="info about">
+                <h4> About Us </h4>
+                <a> Docs </a>
+                <a> FAQ </a>
+            </div>
+            <div class="info legal">
+                <h4> Legal </h4>
+                <a> Privacy Policy </a>
+                <a> Terms of Service </a>
+            </div>
+            <div class="info contact">
+                <h4> Contact </h4>
+                <a> Github </a>
+                <a> Discord </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+{% endblock %}

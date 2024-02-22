@@ -1,0 +1,9 @@
+class Test {
+    field int x, y;
+
+    method int test() {
+        if ((x + y) - 4) {
+            return 1;
+        }
+    }
+}

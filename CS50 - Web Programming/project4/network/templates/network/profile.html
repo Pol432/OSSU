@@ -1,0 +1,28 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <h1> PROFILE: {{ profile_user.username }} </h1>
+
+    <div class="user_profile">
+        <h5> Followers: {{ followers }} </h5>
+        <h5> Following: {{ profile_user.following.all.count }} </h5>
+    </div>
+
+    <button id="follow" style="display: none" data-userID="{{ profile_user.id }}"></button>
+
+    <div id="posts" class="posts" data-value="profile_view/{{ profile_user.id }}">
+
+        <button value="previous" id="load_previous" onclick="load(this.value)"> Previous </button>
+        <button value="next" id="load_next" onclick="load(this.value)"> Next </button>
+    </div>
+{% endblock %}
+
+
+{% block script %}
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel" src="{% static 'network/posts.js' %}"></script>
+    <script type="text/babel" src="{% static 'network/profile.js' %}"></script>
+{% endblock %}

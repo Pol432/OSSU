@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: Because its the one that has more time on reversed files and lowest on sorting files.
+
+sort2 uses: Merge Sort
+
+How do you know?: Because time is similar in every text file and it has lower values than sort3 which also has similar time.
+
+sort3 uses: Selection Sort
+
+How do you know?: Because time is similar in every text file and it has higher values than sort2 which also has similar time.

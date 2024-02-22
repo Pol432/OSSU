@@ -1,0 +1,55 @@
+{% extends "layout_admin.html" %}
+
+{% block main %}
+
+    <div class="container_title">
+        <h1 class="title">Cakes</h1>
+    </div>
+
+    <div class="edit_body">
+        <div class="container_products">
+            <h1 class="title">Add new Product</h1>
+
+            <form class="products_add" action="/cakes_edit" method="post" enctype=multipart/form-data>
+                <label class="product_form"> Product Image </label>
+                <div class="preview"></div>
+                <label class="image_upload">
+                    <input type="file" id="file" name="file" placeholder="insert_image" accept="image/*" required>
+                    (Make sure your image is 200x200 pixels long)
+                </label>
+                <div id="display_image"></div>
+
+
+                <label class="product_form">Product Title</label>
+                <input type="text" id="product_title" name="product_title" placeholder="Insert title" required autocomplete="off">
+
+                <label class="product_form">Product Cost</label>
+                <input type="text" id="product_cost" name="product_cost" placeholder="Insert cost" required autocomplete="off">
+
+                <label class="product_form">Product Description</label>
+                <input type="text" id="product_description" name="product_description" placeholder="Insert description" required autocomplete="off">
+
+                <input type="submit" class="btn btn_add" value="ADD">
+            </form>
+        </div>
+
+        <div class="products_display">
+            {% for cakes in cakes_list %}
+            <div class="product">
+                <img src="/static/{{ cakes['image'] }}" alt="">
+                <div class="product_description">
+                    <h2>{{ cakes['title'] }}</h2>
+                    <h3>Cost: </h3> <h5>${{ cakes['cost'] }}</h6>
+                    <p> {{ cakes['description'] }} </p>
+                </div>
+                <div class="btn_delete">
+                    <form action="/cakes_edit" method="post">
+                        <input type="submit" alt="Submit" name="{{ cakes['id'] }}" id="{{ cakes['id'] }}">
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,681 @@
+/* ___________________________________*/
+/* NavBar */
+.nav {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    align-items: center;
+    background-color: #ffcc66;
+    justify-content: space-between;
+    transition: 0.5s;
+}
+.nav:hover {
+    padding: 0.30cm;
+}
+.navbar_items {
+    padding: 5px;
+    margin: 0;
+    margin: auto;
+    text-align: center;
+    list-style: none;
+}
+#items {
+    display: inline-block;
+    margin: 0 42px;
+    color: black;
+}
+.list_items {
+    transition: 0.3s;
+}
+.list_items a {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    transition: 0.3s;
+}
+.list_items a:hover {
+    color: black;
+    text-decoration: underline;
+}
+.brand_name a {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-family: "Brush Script MT";
+    font-style: italic;
+    font-size: 40px;
+    transition: text-shadow 0.4s;
+}
+.brand_name a:hover {
+    color: black;
+    text-shadow: 5px 5px #ff9933;
+}
+.navbar_icons {
+    display: none;
+}
+
+
+/* Slides */
+.slides_img {
+    width: 100%;
+    height: 800px;
+}
+
+
+/* ___________________________________*/
+/* Body */
+.body {
+    text-align: center;
+}
+
+/* Welcoming */
+.body div#one {
+    background-color: #FFEBC2;
+    max-height: 7cm;
+    padding-bottom: 30px;
+}
+.body div#one div p {
+    margin: 0;
+    padding-top: 4%;
+    font-family: Sorts Mill Goudy;
+    font-size: 2.25rem;
+    text-transform: none;
+    font-style: italic;
+}
+.body div#one div h4 {
+    margin-top: 20px;
+    font-family: "Microsoft Himalaya";
+    font-size: 30px;
+    font-style: normal;
+}
+
+/* Products */
+.body div#products {
+    background-color: white;
+    padding: 75px;
+    padding-top: 0;
+}
+.body div#products h1 {
+    padding-top: 40px;
+    font-family: "Bahnschrift SemiBold", fantasy;
+    text-decoration: underline;
+    margin-bottom: 30px;
+    font-size: 60px;
+}
+.body div#products table {
+    padding-top: 40px;
+    width: 100%;
+}
+.body div#products td.products{
+    position: relative;
+    max-width: 370px;
+    max-height: 370px;
+    overflow: hidden;
+}
+.products img {
+    display: block;
+    flex-direction: row;
+    max-width: 100%;
+}
+.products h3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    display: flex;
+    font-family: "Quicksand", sans-serif;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 90px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.products h3:hover {
+    transition: 0.5s;
+    opacity: 1;
+}
+.products_text--blur {
+    backdrop-filter: blur(5px);
+}
+
+/* Client References */
+.body div#references {
+    background-color: #FFEBC2;
+    min-height: 7cm;
+    flex-direction: column;
+}
+.body .references_container {
+    padding: 80px;
+    box-sizing: border-box;
+}
+.messages {
+    margin-right: auto;
+    margin-left: auto;
+    flex-direction: row;
+    display: flex;
+    box-sizing: border-box;
+}
+.title_message {
+    width: 50%;
+    flex-direction: column;
+    display: flex;
+    box-sizing: border-box;
+}
+.title {
+    text-align: left;
+    display: box;
+    box-sizing: border-box;
+    text-size-adjust: 100%;
+    font-size: 45px;
+    font-family: "Bahnschrift";
+}
+.body div#references div.message1 {
+    max-width: 600px;
+    padding: 30px;
+    margin-top: 60px;
+    display: box;
+    border-color: #ffffff;
+    border-style: solid;
+    border-width: 2px;
+    background-color: #ffcccc;
+    border-radius: 2rem;
+}
+.messages3 {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.body div#references div.message2 {
+    max-width: 600px;
+    margin-left: 60px;
+    margin-bottom: 60px;
+    padding: 30px;
+    width: 100%;
+    border-color: #ffffff;
+    border-style: solid;
+    border-width: 2px;
+    background-color: #ffcccc;
+    border-radius: 2rem;
+    box-sizing: border-box;
+}
+.body div#references div.message3 {
+    max-width: 450px;
+    margin-left: 80px;
+    margin-bottom: 60px;
+    padding: 30px;
+    width: 100%;
+    align-self: center;
+    border-color: #ffffff;
+    border-style: solid;
+    border-width: 2px;
+    background-color: #ffcccc;
+    border-radius: 2rem;
+    box-sizing: border-box;
+}
+.client {
+    font-size: 20px;
+    text-align: left;
+    font-family: "Comic Sans MS";
+}
+.client_text {
+    font-size: 15px;
+    text-align: left;
+    font-family: "Bahnschrift";
+}
+
+/* Hours-Directions */
+.body #location {
+    background-color: white;
+}
+.body .contact_info {
+    text-align: left;
+    display: block;
+}
+.body .location_container {
+    display: flex;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 80px;
+}
+.body .contacts {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 0px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    width: 30%;
+}
+.body .footer_logo {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    vertical-align: middle;
+    max-width: 100%;
+    width: 200px;
+}
+.body .address {
+    margin-bottom: 5px;
+    font-style: normal;
+    margin: 0 0 1rem 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+    text-align: center;
+    font-style: italic;
+}
+.body .hours_directions {
+    flex-direction: column;
+    max-width: 600px;
+    padding-right: 90px;
+    padding-left: 100px;
+    padding-top: 18px;
+    justify-content: center;
+}
+.body .hours_title {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-family: "Montserrat",Arial,Helvetica,sans-serif;
+    color: #b88700;
+    letter-spacing: 0.2rem;
+    margin: 0.75em 0;
+    font-weight: 400;
+    font-style: bold;
+}
+.body .hours_text {
+    margin: 0 0 1rem 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+    margin-bottom: 40px;
+}
+.body .location_map {
+    flex-direction: column;
+    margin-left: 30px;
+    border: solid black;
+    height: 310px;
+}
+
+/* Contacts */
+.body div#contacts {
+    background-color: #2b2b2b;
+}
+.body div#contacts .contacts {
+    text-align: left;
+    display: flex;
+    padding: 15px;
+}
+.body .contacts_container {
+    flex-direction: column;
+    max-width: 30%;
+    margin-left: 100px;
+    text-align: left;
+}
+.body div#contacts h2 {
+    color: #BF883B;
+    font-size: 20px;
+    font-family: 'Lyon Display Web MediumItalic';
+    font-style: italic;
+    font-stretch: normal;
+    margin-bottom: 30px;
+}
+.body div#contacts p {
+    font-size: 15px;
+    line-height: 25px;
+    font-family: 'Lyon Display Web', serif;
+    color: white;
+}
+.body a:hover {
+    text-decoration: underline;
+}
+.body #contacts .container {
+    display: flex;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 30px;
+}
+.body #contacts .home_service {
+    display: flex;
+    max-width: 30%;
+    margin-left: 125px;
+}
+.home_service img {
+    flex-direction: column;
+    max-width: 150px;
+}
+.home_service h2 {
+    margin-top: 30px;
+    text-align: left;
+    flex-direction: column;
+}
+
+
+/* ___________________________________*/
+/* Division */
+.stripes_div {
+    width: 100%;
+    height: 10px;
+    background-image: url("/static/stripes.jpg");
+}
+
+/* ___________________________________*/
+/* Responsive Ipad! */
+@media only screen and (max-width: 1000px) {
+    #items {
+        margin: 20px;
+    }
+    .nav:hover {
+        padding: 0;
+    }
+    .navbar_items {
+        padding: 0;
+    }
+
+    .slides_img {
+        height: 600px;
+    }
+
+    .body div#products h1 {
+        font-size: 45px;
+    }
+    .products h3 {
+        font-size: 65px;
+    }
+
+    .body .references_container {
+        padding: 25px;
+        margin: auto;
+    }
+    .messages {
+        display: block;
+    }
+    .title_message .title {
+        font-size: 35px;
+        text-align: center;
+    }
+    .title_message {
+        width: 100%;
+        display: block;
+    }
+    .body div#references div.message1{
+        margin-top: 20px;
+    }
+    .body div#references div.message2 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .body div#references div.message3 {
+        margin-left: 30px;
+    }
+
+    .body .contacts {
+        display: none;
+    }
+
+    .body .location_container {
+        padding: 45px;
+    }
+    .body .hours_directions {
+        padding: 10px;
+        margin-right: 10px;
+    }
+    .body .location_map {
+        margin: 0;
+        height: 310px;
+    }
+
+    .body #contacts .home_service {
+        display: none;
+    }
+
+    .body #contacts .container {
+        padding: 15px;
+    }
+}
+
+/* Responsive Phone */
+@media only screen and (max-width: 750px) {
+    /* NavBar */
+    .nav {
+        width: 100%;
+        position: fixed;
+        width: 100%;
+    }
+    .navbar_items {
+        display: none;
+    }
+    #items {
+        padding: 0;
+        margin: 5px;
+        margin-right: 10px;
+    }
+    .navbar_icons {
+        width: 100%;
+        display: block;
+        padding: 0;
+        margin: 0;
+        margin-left: auto;
+        margin-right: 0;
+        text-align: right;
+        list-style: none;
+        justify-content: center;
+        margin-right: 20px;
+    }
+    .navbar_icons i {
+        width: 100%;
+        text-decoration: none;
+        color: black;
+        font-size: 25px;
+        margin-top: 10px;
+    }
+    .material_icons {
+        float: right;
+        margin-top: 5px;
+    }
+    .navbar_icons li {
+        text-align: right;
+        display: inline-block;
+    }
+    .brand_name a {
+        text-align: left;
+        font-size: 30px;
+        margin-left: 10px;
+        position: relative;
+        display: block;
+    }
+    .brand_name {
+        float: left;
+    }
+
+    /* Slides */
+    .slides_img {
+        height: 300px;
+    }
+
+    /* Welcoming */
+    .welcoming {
+        padding: 30px;
+    }
+    .body div#one div p {
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+    .body div#one div h4 {
+        font-size: 20px;
+        margin: 0;
+    }
+    .body div#one h3 {
+        display: none;
+    }
+
+    /* Products */
+    .body div#products {
+        padding: 30px;
+    }
+    .body div#products h1 {
+        font-size: 30px;
+        padding-top: 0;
+        margin-bottom: 10px;
+    }
+    .products h3 {
+        font-size: 25px;
+    }
+
+    /* Client References */
+    .body .references_container {
+        padding: 25px;
+        margin: auto;
+    }
+    .messages {
+        display: block;
+    }
+    .title_message .title {
+        font-size: 25px;
+        text-align: center;
+    }
+    .title_message {
+        width: 100%;
+        display: block;
+    }
+    .body div#references div.message1{
+        margin-top: 20px;
+        padding: 15px;
+        max-width: 300px;
+    }
+    .body div#references div.message2 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 15px;
+        max-width: 300px;
+        margin-left: 60px;
+    }
+    .body div#references div.message3 {
+        margin-left: 30px;
+        padding: 15px;
+        max-width: 300px;
+    }
+
+    /* Contacts */
+    .body .contact_info {
+        display: block;
+    }
+    .body .contacts {
+        display: none;
+    }
+
+    /* Hours and location */
+    .body .hours_title {
+        font-size: 1.25rem;
+    }
+    .body .location_container {
+        display: block;
+        padding: 25px;
+    }
+    .body .hours_directions {
+        display: block;
+        padding: 0;
+        margin-right: 0;
+    }
+    .body .location_map {
+        margin: 0;
+        margin: auto;
+        height: 210px;
+        width: 210px;
+        margin-bottom: 10px;
+    }
+    .body .location_map iframe {
+        display: block;
+        width: 200px;
+        height: 200px;
+    }
+
+    .body #contacts .home_service {
+        display: none;
+    }
+
+    /* Contacts */
+    .body #contacts .container {
+        display: block;
+        padding: 30px;
+    }
+    .body .contacts_container {
+        margin: 10px;
+        max-width: 100%;
+        margin-left: 10px;
+        margin-bottom: 20px;
+    }
+    .body div#contacts h2 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .body div#contacts p {
+        margin-bottom: 5px;
+    }
+}
+
+
+
+
+/* ___________________________________*/
+body {
+    background-color: red;
+    margin: 0;
+    --nav-height: 90px;
+
+    padding-top: var(--var-height);
+    padding-left: 0;
+}
+
+a, a:hover, a:focus, a:active {
+    color: black;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+    text-decoration: none;
+    color: inherit;
+}
+html {
+    scroll-behavior: smooth;
+}
+p {
+    all: none;
+}
+
+
+/* ___________________________________*/
+body {
+    background-color: red;
+    margin: 0;
+    --nav-height: 90px;
+
+    padding-top: var(--var-height);
+    padding-left: 0;
+}
+
+a, a:hover, a:focus, a:active {
+    color: black;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+    text-decoration: none;
+    color: inherit;
+}
+html {
+    scroll-behavior: smooth;
+}
+p {
+    all: none;
+}
+

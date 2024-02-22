@@ -1,0 +1,69 @@
+(LOOP)
+// If key is pressed then clear the screen
+@i
+M=0
+@KEYBOARD
+D=M
+@CLEAR
+D;JEQ
+
+(FILL)
+// Else fill it
+@512
+D=A
+@i
+D=D-M
+@LOOP
+D;JEQ
+
+// Moving pixels in screen
+@SCREEN
+D=A
+@i
+A=D+M
+// Fill pixen in screen
+M=1
+// i++
+@i
+M=M+1
+
+// If keyboard is pressed then restart LOOP
+@KEYBOARD
+D=M
+@LOOP
+D;JEQ
+// Else continue
+@FILL
+D;JMP
+
+(CLEAR)
+@512
+D=A
+@i
+D=D-M
+@LOOP
+D;JEQ
+// Moving pixels in screen
+@SCREEN
+D=A
+@i
+A=D+M
+// Clear pixel in screen
+M=0
+// i++
+@i
+M=M+1
+
+// If there is a key pressed or the screen is fully cleared then restart
+@KEYBOARD
+D=M
+@LOOP
+D;JNE
+
+// Else continue
+@CLEAR
+D;JMP
+
+
+@LOOP
+D;JMP

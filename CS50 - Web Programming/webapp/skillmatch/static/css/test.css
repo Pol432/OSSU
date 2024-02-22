@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css?family=Space Grotesk&display=swap');
+
+body {
+    background-color: black;
+    padding-bottom: 200px;
+}
+
+h1 {
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+    font-family: "Space Grotesk";
+}
+
+.band_menu {
+    background-color: transparent;
+}
+
+#blob_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: -1;
+    top: 50;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.test {
+    margin: auto;
+    margin-top: 45px;
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 60px;
+    width: 60%;
+    background-color: white;
+}
+
+.test p {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.activity {
+    border: 1px solid black;
+    border-radius: 15px;
+    margin-bottom: 12.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    transition: background-color 0.5s ease-in-out;
+}
+
+  
+.activity.selected-positive {
+    background-color: #258C00;
+    color: white;
+}
+
+.activity.selected-negative {
+    background-color: #BF0000;
+    color: white;
+}
+
+.selected {
+    transition: color 0.5s ease-in-out;
+    color: white
+}
+
+.activity p {
+    margin: 0;
+}
+
+.activity button {
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    height: 45px;
+    width: 55px;
+    border: 0;
+    font-size: 20px;
+}
+
+.switchButton {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid gray;
+    width: 100px;
+    cursor: pointer;
+}
+
+.switchButton:disabled {
+    border: 2px solid gray;
+}
+
+.activityGroup {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+.fadeOut {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fadeIn {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#hollandTest {
+    transition: transform 0.5s ease-in-out;
+}
+
+.activityGroup h4 {
+    font-family: Ne10-simplified,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #053041;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/**/
+.td1Clicked {
+    background-color: greenyellow !important;
+}
+
+.td2Clicked {
+    background-color: yellow !important;
+}
+
+.td3Clicked {
+    background-color: red !important;
+}
+
+#hollandContent {
+    margin-top: 35px;
+}
+
+.firstQuestions {
+    max-width: 100%;
+    overflow: hidden;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: black;
+    padding: 3px;
+    margin-bottom: 12.5px;
+}
+
+.firstContent {
+    width: 100%;
+    font-family: Ne10-simplified,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #053041;
+    margin: auto;
+}
+
+.firstContent td, th{
+    padding: 15px;
+    border: 1px solid gray;
+    background-color: white;
+}
+
+.firstContent tr {
+    padding-top: 20px;
+}
+
+.firstContent th {
+    background-color: beige;
+}
+
+.adjective-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 10px;
+}
+
+.adjective-clicked {
+    background-color: greenyellow;
+}
+
+.submitMessage h4 {
+    font-size: 40px;
+    text-align: center;
+}
+.submitMessage p {
+    text-align: center;
+    font-size: 25px;
+}

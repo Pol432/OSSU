@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script type="text/javascript" src="functions.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>Which e-mail service is owned by Microsoft?</h3>
+
+                <!-- Buttons of the multiple choice question -->
+                <div type="button">
+                    <button id="b1" onclick="wrong(id)">Gmail</button>
+                    <button id="b2" onclick="correct(id)">Hotmail</button>
+                    <button id="b3" onclick="wrong(id)">Outlook</button>
+                    <button id="b4" onclick="wrong(id)">Yahoo!</button>
+
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>What was Walt Disney afraid of?</h3>
+
+                <div>
+                    <!-- Text that appears when the answer is submitted -->
+                    <h4 id="free_correct" hidden>Correct!</h4>
+                    <h4 id="free_incorrect" hidden>Incorrect</h4>
+
+                    <!-- Input field and the button to submit answer -->
+                    <input id="user_input" type="text">
+                    <button onclick="check()">Check Answer</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

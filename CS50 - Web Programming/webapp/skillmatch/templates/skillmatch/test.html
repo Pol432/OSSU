@@ -1,0 +1,50 @@
+{% extends "skillmatch/layout.html" %}
+{% load static %}
+
+{% block script %}
+    <script type="text/babel" src="{% static 'js/holland_questions.js' %}"></script>
+    <script type="text/babel" src="{% static 'js/holland_test.js' %}"></script>
+    <script type="text/babel" src="{% static 'js/kuder_test.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/test.css' %}">
+{% endblock %}
+
+{% block body %}
+    <div style="display: flex" id="blob_container">
+        <svg viewBox="0 20 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="700px" id="blobSvg">
+            <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color: rgb(224, 41, 223);"></stop>
+                <stop offset="100%" style="stop-color: rgb(163, 41, 224);"></stop>
+            </linearGradient>
+            </defs>
+            <path fill="url(#gradient)">
+                <animate attributeName="d"
+                    dur="10000ms"
+                    repeatCount="indefinite"
+                    
+                    values="M403.5,278Q413,306,386,320.5Q359,335,352,365.5Q345,396,311.5,379Q278,362,256.5,393.5Q235,425,197,441Q159,457,153.5,409Q148,361,122.5,347Q97,333,52,312Q7,291,28.5,254Q50,217,67.5,189Q85,161,129,163.5Q173,166,177,129Q181,92,209.5,101Q238,110,263,105Q288,100,316,103Q344,106,352.5,135Q361,164,373,184Q385,204,389.5,227Q394,250,403.5,278Z;
+                    
+                    M406.5,266.5Q345,283,345,303.5Q345,324,354.5,374Q364,424,329.5,425Q295,426,264,440Q233,454,215,412.5Q197,371,151.5,388.5Q106,406,93.5,373.5Q81,341,92,308Q103,275,79.5,246.5Q56,218,76,192.5Q96,167,117.5,148Q139,129,160,111Q181,93,205.5,51Q230,9,266.5,24Q303,39,334.5,56Q366,73,349.5,129Q333,185,392,183Q451,181,459.5,215.5Q468,250,406.5,266.5Z;
+                    
+                    M477.5,289.5Q480,329,431,341Q382,353,355.5,362Q329,371,311,395.5Q293,420,266.5,398Q240,376,219.5,371Q199,366,165,373Q131,380,100.5,364Q70,348,89,311Q108,274,67,243.5Q26,213,40.5,179Q55,145,73,111.5Q91,78,145,106Q199,134,216,91.5Q233,49,262,69Q291,89,307,114Q323,139,383,119.5Q443,100,422.5,149Q402,198,438.5,224Q475,250,477.5,289.5Z;
+                    
+                    M403.5,278Q413,306,386,320.5Q359,335,352,365.5Q345,396,311.5,379Q278,362,256.5,393.5Q235,425,197,441Q159,457,153.5,409Q148,361,122.5,347Q97,333,52,312Q7,291,28.5,254Q50,217,67.5,189Q85,161,129,163.5Q173,166,177,129Q181,92,209.5,101Q238,110,263,105Q288,100,316,103Q344,106,352.5,135Q361,164,373,184Q385,204,389.5,227Q394,250,403.5,278Z">
+                </animate>
+            </path>
+        </svg>
+    </div>
+    <h1> TEST </h1>
+
+    <div class="test" id="test">
+        <div id="kuderTest">
+            <h3> First Part </h3> 
+            <p> From the following activitiy groups, check with a + then one you consider the MOST atractive, and with - the one you consider the LEAST atractive. </p>
+            <div id="kuderContent"></div>
+        </div>
+        <div id="hollandTest" style="display: none;">
+            <h3> Second Part </h3>
+            <p> Complete the following activities. </p>
+            <div id="hollandContent"></div>
+        </div>
+    </div>
+{% endblock %}
